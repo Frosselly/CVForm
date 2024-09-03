@@ -9,7 +9,7 @@
 - [x] phone
 
 ### educational background **form**
-- [ ] school name 
+- [x] school name 
 - [ ] title of study and date of study
 
 ### practical experience **form**
@@ -20,4 +20,11 @@
 
 ### Submit **form** button 
 - [ ] general data
+
+
+
+## Form Improvements
+
+- [ ] Add multiple educational places
+- [ ] Add multiple practical experience places
 - [ ] 
