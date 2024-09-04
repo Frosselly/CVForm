@@ -1,10 +1,10 @@
 import "../styles/input.css"
 
-export default function Input({text, id, type="text"}) {
+export default function Input({text, id, type="text", onChange}) {
   return (
-    <div>
+    <div className="inputDiv">
       <label htmlFor={id}>{text}</label>
-      <input id={id} type={type}></input>
+      <input id={id} name={id} type={type} onChange={onChange}></input>
     </div>
   );
 }
