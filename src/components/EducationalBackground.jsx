@@ -1,8 +1,8 @@
 import Input from "./Input";
 
-export default function EducationalBackground() {
+export default function EducationalBackground({className="education"}) {
   return (
-    <>
+    <section className={className}>
       <Input text={"School name:"} id={"schoolName"} />
       <Input text={"Title of study"} id={"studyTitle"} />
       <Input 
@@ -15,6 +15,6 @@ export default function EducationalBackground() {
         id={"studyEndDate"}
         type={"date"}
       />
-    </>
+    </section>
   );
 }

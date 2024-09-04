@@ -2,7 +2,7 @@ import Input from "./Input";
 
 export default function PracticalExperience(){
     return(
-        <>
+        <section className="practical">
             <Input 
                 text={"Company name:"}
                 id={"companyName"}
@@ -25,6 +25,6 @@ export default function PracticalExperience(){
                 id={"workEndDate"}
                 type={"date"}
             />
-        </>
+        </section>
     )
 }
