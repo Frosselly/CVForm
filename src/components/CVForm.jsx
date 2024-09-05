@@ -3,7 +3,7 @@ import EducationalBackground from "./EducationalBackground"
 import PracticalExperience from "./PracticalExperience"
 import { useState } from "react"
 
-export default function CVform(){
+export default function CVform({handleSubmit}){
 
     const [educationsIndex, setEducationsIndex] = useState(0);
     const [workIndex, setWorkIndex] = useState(0);
@@ -21,6 +21,7 @@ export default function CVform(){
             workplaces:readSection(e, '.practical')
         }
         setFormData(newFormData);
+        handleSubmit(newFormData);
     }
     
     function addEducation(){
