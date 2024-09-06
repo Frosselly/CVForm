@@ -59,7 +59,8 @@ function readSection(e, className){
             let obj = {};
             const inputs = section.querySelectorAll('input, select, textarea');
             inputs.forEach((input) => {
-                obj[input.name] = input.value;
+                const name = input.name.replace(/_+/g, ' ');
+                obj[name] = input.value;
             });
             data.push(obj)
         });

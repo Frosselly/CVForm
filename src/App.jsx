@@ -21,7 +21,7 @@ function App() {
     if(isFormOpen){
       return <CVform handleSubmit={handleSubmit}/>
     }else{
-      return <CVDisplay props={formData}/>
+      return <CVDisplay props={formData} key={'CVDisplay'}/>
     }
   }
 

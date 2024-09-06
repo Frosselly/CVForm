@@ -36,7 +36,7 @@
 - [ ] Edit button
 - [ ] New Form button
 
-### Display names (at this point object key names are used in display)
-- [ ] General info
-- [ ] Education
-- [ ] Work experience
+### Fix display names (at this point object key names are used in display)
+- [x] General info
+- [x] Education
+- [x] Work experience

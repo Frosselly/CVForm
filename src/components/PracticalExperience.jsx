@@ -5,24 +5,24 @@ export default function PracticalExperience(){
         <section className="practical">
             <Input 
                 text={"Company name:"}
-                id={"companyName"}
+                id={"Company_name"}
             />
             <Input 
                 text={"Position title"}
-                id={"positionTitle"}
+                id={"Position_title"}
             />
             <Input 
                 text={"Main responsibilities"}
-                id={"mainResponsibilities"}
+                id={"Main_responsibilities"}
             />
             <Input 
                 text={"Start date"}
-                id={"workStartDate"}
+                id={"Start_date"}
                 type={"date"}
             />
             <Input 
                 text={"End date"}
-                id={"workEndDate"}
+                id={"End_date"}
                 type={"date"}
             />
         </section>

@@ -1,13 +1,20 @@
 import "../../styles/display.css";
 
-export function CVDisplay({ props }) {
+export function CVDisplay({ props, onEdit, onNewCV }) {
+
   function displayGeneralInfo(data) {
     let displayData = [];
     for (let [index, input] of Object.entries(data)) {
       const edited = (
-        <div className="output">
-          <p>{index}:</p> <p>{input}</p>
-        </div>
+        <>
+          {input.length != 0 && (
+            <>
+              <div className="output" key={index+input}>
+                <p key={index}>{index}:</p> <p>{input}</p>
+              </div>
+            </>
+          )}
+        </>
       );
 
       displayData.push(edited);
@@ -17,39 +24,36 @@ export function CVDisplay({ props }) {
   function displayArrayInfo(data) {
     let displayData = [];
     for (let [index, entry] of data.entries()) {
-      const lineBreak = <hr></hr>;
+      const lineBreak = <hr key={'lineBreak'+index}></hr>;
       index > 0 && displayData.push(lineBreak);
-      for (let [index, input] of Object.entries(entry)) {
-        const edited = (
-          <div className="output">
-            <p>{index}:</p> <p>{input}</p>
-          </div>
-        );
-
-        displayData.push(edited);
-      }
+      displayData.push(displayGeneralInfo(entry))
     }
     return displayData;
   }
 
   return (
     <>
-      <div className="content">
-        <div className="displayBlock">
+      <nav>
+        <button onClick={onNewCV}>New CV</button>
+        <button onClick={onEdit}>Edit</button>
+      </nav>
+      <div className="content" key="content">
+      { (
+        <div className="displayBlock" key="gen">
           <h3>General info</h3>
           {displayGeneralInfo(props.general)}
         </div>
-
+)}
         {props.educations.length != 0 && (
-          <div className="displayBlock">
+          <div className="displayBlock"  key="edu-info">
             <h3>Educational info</h3>
             {displayArrayInfo(props.educations)}
           </div>
         )}
 
         {props.workplaces.length != 0 && (
-          <div className="displayBlock">
-             <h3>Work experience</h3>
+          <div className="displayBlock" key="work">
+            <h3>Work experience</h3>
             {displayArrayInfo(props.workplaces)}
           </div>
         )}
