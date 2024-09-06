@@ -1,4 +1,26 @@
 .output{
     display: flex;
     justify-content: space-between;
+    margin: 12px 0 ;
+    padding: 0;
+}
+
+.output:last-child{
+    text-align: right;
+}
+
+.displayBlock{
+    width: 646px;
+    padding: 28px 30px;
+    background-color: #f1f5f9;
+}
+
+.displayBlock h3{
+    text-align: left;
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }

@@ -19,12 +19,24 @@
 - [x] date from and until when you worked for that company
 
 ### Submit **form** button 
-- [ ] general data
+- [x] general data
+
+### Form Improvements
+
+- [x] Add multiple educational places
+- [x] Add multiple practical experience places
+- [ ] Basic styling
 
 
+## Display Handling
+- [x] General info
+- [x] Education
+- [x] Work experience
+- [x] Basic styling
+- [ ] Edit button
+- [ ] New Form button
 
-## Form Improvements
-
-- [ ] Add multiple educational places
-- [ ] Add multiple practical experience places
-- [ ] 
+### Display names (at this point object key names are used in display)
+- [ ] General info
+- [ ] Education
+- [ ] Work experience
