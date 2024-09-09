@@ -19,10 +19,16 @@ function App() {
   }
 
   function handleNewCV() {
+    setFormData({
+      GeneralInfo: {},
+      Educations: [],
+      Workplaces: []
+  })
     setFormOpen(true);
   }
 
   function handleEdit() {
+    console.log(formData);
     setFormOpen(true);
   }
 
