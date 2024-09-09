@@ -3,15 +3,11 @@ import EducationalBackground from "./EducationalBackground"
 import PracticalExperience from "./PracticalExperience"
 import { useState } from "react"
 
-export default function CVform({handleSubmit}){
+export default function CVform({handleSubmit, data}){
 
     const [educationsIndex, setEducationsIndex] = useState(0);
     const [workIndex, setWorkIndex] = useState(0);
-    const [formData, setFormData] = useState({
-        general:{},
-        educations:[],
-        workplaces:[]
-    });
+    const [formData, setFormData] = useState({data});
 
     function onSubmit(e){
         e.preventDefault();
@@ -38,12 +34,12 @@ export default function CVform({handleSubmit}){
             <button type="Submit">Submit</button>
             <button type="Button"onClick={addEducation}>Add Education</button>
             <button type="Button"onClick={addWorkplace}>Add Workplace</button>
-            <GeneralInfo />
+            <GeneralInfo data={formData.general}/>
             {Array.from({ length: educationsIndex }).map((_, index) => (
-                <EducationalBackground key={"education"+index}/>)
+                <EducationalBackground data={formData.educations[index]} key={"education"+index}/>)
                 )}
                 {Array.from({ length: workIndex }).map((_, index) => (
-                <PracticalExperience key={"practical"+index}/>)
+                <PracticalExperience data={formData.workplaces[index]} key={"practical"+index}/>)
                 )}
         </form>
         </>
