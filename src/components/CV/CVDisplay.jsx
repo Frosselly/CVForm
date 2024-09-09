@@ -23,22 +23,22 @@ export default function CVDisplay({ props, onEdit, onNewCV }) {
       </nav>
       <div className="content" key="content">
       { (
-        <div className="displayBlock" key="gen">
+        <div className="displayBlock">
           <h3>General info</h3>
           {displayGeneral(props.GeneralInfo)}
         </div>
 )}
-        {props.educations.length != 0 && (
+        {props.Educations.length != 0 && (
           <div className="displayBlock"  key="edu-info">
             <h3>Educational info</h3>
-            {displayArrayInfo(props.educations, displayEducation)}
+            {displayArrayInfo(props.Educations, displayEducation)}
           </div>
         )}
 
-        {props.workplaces.length != 0 && (
+        {props.Workplaces.length != 0 && (
           <div className="displayBlock" key="work">
             <h3>Work experience</h3>
-            {displayArrayInfo(props.workplaces, displayWorkplace)}
+            {displayArrayInfo(props.Workplaces, displayWorkplace)}
           </div>
         )}
       </div>
