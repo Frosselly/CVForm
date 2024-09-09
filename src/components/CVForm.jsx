@@ -26,7 +26,6 @@ export default function CVform(){
             GeneralInfo : newGeneral
         }
 
-        console.log(newForm)
         setFormData(newForm);
     }
 
@@ -45,7 +44,6 @@ export default function CVform(){
         newForm.Educations[index] = newEducation;
 
 
-        console.log(newForm)
         setFormData(newForm);
     }
 
@@ -54,17 +52,16 @@ export default function CVform(){
         
         const { name, value } = event.target;
         
-        const newEducation = {
-            ...formData.Educations[index],
+        const newWorkplace = {
+            ...formData.Workplaces[index],
             [name] : value ,
         }
         const newForm = {
             ...formData,
         }
-        newForm.Educations[index] = newEducation;
+        newForm.Workplaces[index] = newWorkplace;
 
 
-        console.log(newForm)
         setFormData(newForm);
     }
 
@@ -82,14 +79,14 @@ export default function CVform(){
             <button onClick={addWork}>Add Workplace</button>
             <h1>{formData.name && formData.name}</h1>
             <GeneralInfo onChange={saveGeneral}/>
-            {
-                Array.from({ length: 3 }, (_, i) => i).map((_, index) => {
-                    return <EducationalBackground onChange={() => saveEducation(_, index)}/>
-                })
-            }
+            {Array.from({ length: educationIndex }).map((_, index) => (
+                <EducationalBackground onChange={(e) => saveEducation(e, index)} key={"education"+index}/>)
+                )}
             {/* <EducationalBackground onChange={saveEducation}/> */}
-            <PracticalExperience onChange={saveWork}/>
-            
+            {/* <PracticalExperience onChange={saveWork}/> */}
+            {Array.from({ length: educationIndex }).map((_, index) => (
+                <PracticalExperience onChange={(e) => saveWork(e, index)} key={"work"+index}/>)
+                )}
         </>
     )
 }
